@@ -1,0 +1,36 @@
+.item-cast__image-cast {
+  width: 200px;
+  height: 280px;
+}
+
+.item-cast__original-name {
+  display: flex;
+  align-items: center;
+}
+
+.item-cast__original-name::before {
+  width: 5px;
+  height: 5px;
+  background: black;
+  border-radius: 50px;
+  content: '';
+  margin-right: 12px;
+}
+
+.link-go-back {
+  color: black;
+  padding: 2px;
+}
+
+.button-back {
+  border: transparent;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  &:hover,
+  &:focus {
+    background-color: rgba(31, 144, 236, 0.973);
+  }
+}

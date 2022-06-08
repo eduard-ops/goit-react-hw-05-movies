@@ -1,0 +1,45 @@
+.main-wrap {
+  display: flex;
+  margin-top: 65px;
+  border: 1px solid #ececec;
+  border-top: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.right-container {
+  margin-left: 40px;
+}
+
+.movie-item__year {
+  margin-left: 10px;
+}
+
+.aditional-list {
+  list-style: disc;
+  margin-left: 30px;
+}
+
+.aditional-list__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.aditional-wrap {
+  margin-top: 65px;
+  border: 1px solid #ececec;
+  border-top: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+  margin-bottom: 40px;
+}
+
+.movie-item__subtitle-text {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.genres-span:not(:last-child) {
+  margin-right: 10px;
+}

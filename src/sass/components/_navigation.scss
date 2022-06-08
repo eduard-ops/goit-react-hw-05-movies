@@ -1,0 +1,38 @@
+.site-nav {
+  display: flex;
+  margin-left: 50px;
+}
+
+.header {
+  border: 1px solid #ececec;
+  border-top: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+  margin-bottom: 30px;
+}
+
+.header-navigation__link {
+  font-size: 30px;
+  color: black;
+}
+
+.header-navigation__link.active {
+  color: rgba(69, 144, 243, 0.856);
+}
+
+.site-link__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.aditional-list__item-link {
+  color: rgb(9, 9, 122);
+  &:hover,
+  &:focus {
+    color: rgba(69, 144, 243, 0.856);
+  }
+}
+
+.aditional__title-text {
+  font-size: 25px;
+}

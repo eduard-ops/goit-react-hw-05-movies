@@ -1,0 +1,18 @@
+.movie-list {
+  margin-top: 80px;
+}
+
+.popular-list {
+  list-style-type: disc;
+}
+
+.popular-list__item:not(:last-child) {
+  margin-bottom: 5px;
+}
+.popular-list__item-link {
+  color: rgb(9, 9, 122);
+  &:hover,
+  &:focus {
+    color: rgba(69, 144, 243, 0.856);
+  }
+}

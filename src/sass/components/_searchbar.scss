@@ -1,0 +1,22 @@
+.header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header-form {
+  width: 400px;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.header-form__input-search {
+  padding: 10px;
+  padding-left: 40px;
+  border-radius: 6px;
+  width: 400px;
+  border: transparent;
+  outline-color: white;
+  &:hover {
+    outline-color: rgba(69, 144, 243, 0.856);
+  }
+}
