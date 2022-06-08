@@ -26,6 +26,7 @@ export default function MoviesList({ movieName }) {
         toast.info(`Image with name ${movieName} not found 😢`, {
           theme: 'colored',
         });
+        setSpiner(false);
       }
     };
     fetchMovie();
