@@ -1,3 +1,7 @@
-export default function NotFoundView(params) {
-  return <h1>По вашему запросу нету совпадений</h1>;
+import IconNotfoundPage from '../images/not-page.png';
+
+export default function NotFoundView() {
+  return (
+    <img className="img-notfound-page" src={IconNotfoundPage} alt="not-found" />
+  );
 }
