@@ -4,7 +4,7 @@ import MoviesList from './Movies-list';
 
 import { useNavigate, useLocation } from 'react-router-dom';
 
-export function SearchMovies() {
+export default function SearchMovies() {
   const location = useLocation();
 
   const searchString = new URLSearchParams(location.search).get('query');
