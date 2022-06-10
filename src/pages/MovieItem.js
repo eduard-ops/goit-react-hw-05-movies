@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 
 import { fetchMoviesById } from 'services/movies-api';
 
-import Reviews from '../pages/Reviews';
-
 import iconNotFound from '../images/actor-notfound.png';
 
-import Cast from 'pages/Cast';
+import Loader from 'components/Loader';
+
+import { ReactComponent as IconSearch } from '../images/arrowleft-icon.svg';
+
 import {
   useParams,
   NavLink,
@@ -16,7 +17,8 @@ import {
   Link,
 } from 'react-router-dom';
 
-import { ReactComponent as IconSearch } from '../images/arrowleft-icon.svg';
+const Cast = lazy(() => import('./Cast'));
+const Reviews = lazy(() => import('./Reviews'));
 
 const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/w500/';
 
@@ -91,10 +93,12 @@ export default function MovieItem() {
           </li>
         </ul>
       </div>
-      <Routes>
-        <Route path="reviews" element={<Reviews idFilm={moviesId} />}></Route>
-        <Route path="cast" element={<Cast idFilm={moviesId} />}></Route>
-      </Routes>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="reviews" element={<Reviews idFilm={moviesId} />}></Route>
+          <Route path="cast" element={<Cast idFilm={moviesId} />}></Route>
+        </Routes>
+      </Suspense>
     </>
   );
 }
