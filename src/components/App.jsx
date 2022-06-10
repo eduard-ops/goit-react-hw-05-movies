@@ -1,20 +1,26 @@
-import 'react-toastify/dist/ReactToastify.css';
+import { Suspense } from 'react';
 
-import Conatainer from './Conatainer';
+import { lazy } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
 import { ToastContainer } from 'react-toastify';
 
-import HomeView from 'pages/HomeView';
+import 'react-toastify/dist/ReactToastify.css';
 
-import NotFoundView from 'pages/NotFoundView';
+import Conatainer from './Conatainer';
 
 import Navigation from './Navigation';
 
-import MovieItem from 'pages/MovieItem';
+import Loader from './Loader';
 
-import { SearchMovies } from 'pages/SearchMovies';
+const HomeView = lazy(() => import('../pages/HomeView'));
+
+const SearchMovies = lazy(() => import('../pages/SearchMovies'));
+
+const MovieItem = lazy(() => import('../pages/MovieItem'));
+
+const NotFoundView = lazy(() => import('../pages/NotFoundView'));
 
 export const App = () => {
   return (
@@ -22,12 +28,14 @@ export const App = () => {
       <Navigation />
       <Conatainer>
         <ToastContainer autoClose={3000} pauseOnHover={false} />
-        <Routes>
-          <Route path="/" element={<HomeView />}></Route>
-          <Route path="movies" element={<SearchMovies />}></Route>
-          <Route path="movies/:moviesId/*" element={<MovieItem />}></Route>
-          <Route path="*" element={<NotFoundView />}></Route>
-        </Routes>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<HomeView />}></Route>
+            <Route path="movies" element={<SearchMovies />}></Route>
+            <Route path="movies/:moviesId/*" element={<MovieItem />}></Route>
+            <Route path="*" element={<NotFoundView />}></Route>
+          </Routes>
+        </Suspense>
       </Conatainer>
     </>
   );
