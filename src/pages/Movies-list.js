@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import PropTypes from 'prop-types';
+
 import { Link } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
@@ -54,3 +56,7 @@ export default function MoviesList({ movieName }) {
     </>
   );
 }
+
+MoviesList.propTypes = {
+  movieName: PropTypes.string.isRequired,
+};
