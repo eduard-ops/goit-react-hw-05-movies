@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { fetchReviewById } from 'services/movies-api';
 
+import PropTypes from 'prop-types';
+
 export default function Reviews({ idFilm }) {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
@@ -29,3 +31,8 @@ export default function Reviews({ idFilm }) {
     </>
   );
 }
+
+
+Reviews.propTypes = {
+  idFilm: PropTypes.string.isRequired,
+};
