@@ -4,6 +4,8 @@ import { fetchCastById } from 'services/movies-api';
 
 import iconNotFound from '../images/actor-notfound.png';
 
+import PropTypes from 'prop-types';
+
 const BASE_POSTER_URL = 'https://image.tmdb.org/t/p/w500/';
 
 export default function Cast({ idFilm }) {
@@ -37,3 +39,7 @@ export default function Cast({ idFilm }) {
     </>
   );
 }
+
+Cast.propTypes = {
+  idFilm: PropTypes.string.isRequired,
+};
